@@ -1,0 +1,24 @@
+{
+  "name": "graphql-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "demo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhadev/graphql-starter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhadev/graphql-starter/issues"
+  },
+  "homepage": "https://github.com/jhadev/graphql-starter#readme",
+  "dependencies": {
+    "apollo-server": "^2.9.14",
+    "graphql-tag": "^2.10.1"
+  }
+}
