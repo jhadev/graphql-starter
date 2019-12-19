@@ -17,9 +17,15 @@ const typeDefs = gql`
 
   type Query {
     me: User!
+    friends: [User]!
   }
 `;
-// resolvers have to match types in schema
+// resolvers have to match query fields
+
+// resolvers should respect your schema
+
+// resolvers can be async and can retrieve data from anywhere
+// can mix and match databases and merge data, even from external sources.
 const resolvers = {
   Query: {
     me() {
