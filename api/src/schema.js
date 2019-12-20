@@ -15,10 +15,22 @@ const typeDefs = gql`
     createdAt: String!
     name: String!
     type: String!
+    img: String!
+    buddies: [Pet]
   }
 
+  # input type
+
+  input PetInput {
+    name: String
+    type: String
+  }
+  # ref input type in query and add it to resolvers
   type Query {
-    pets: [Pet]!
+    # optionally include a pet input
+    # use ! to always expect it
+    pets(input: PetInput): [Pet]!
+    pet(input: PetInput): Pet
   }
 `;
 
