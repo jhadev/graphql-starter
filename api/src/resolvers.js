@@ -5,8 +5,13 @@
 
 module.exports = {
   Query: {
-    pets(_, __, ctx) {
-      return ctx.models.Pet.findMany();
+    // second argument is input type object
+    // filter by PetInput in schema
+    pets(_, { input }, ctx) {
+      return ctx.models.Pet.findMany(input);
+    },
+    pet(_, { input }, ctx) {
+      return ctx.models.Pet.findOne(input);
     }
   }
   // Mutation: {
@@ -23,3 +28,25 @@ module.exports = {
 
   // }
 };
+
+// Query to find all cats
+
+/*
+{
+  pets(input: { type: "CAT" }){
+    name
+    type
+  }
+}
+
+// find one pet
+
+{
+  pet(input: { name: "Reggie" }) {
+    name
+    type
+  }
+}
+
+
+*/
